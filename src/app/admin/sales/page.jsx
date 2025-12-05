@@ -17,9 +17,9 @@ export default async function AdminSalesPage() {
   }
 
   return (
-    <div className="p-6 md:p-10 ml-80 min-h-screen bg-gray-50">
+    <div className="p-4 md:p-10 ml-0 md:ml-80 min-h-screen bg-gray-50">
       <h1
-        className="text-3xl font-bold mb-6 text-black"
+        className="text-2xl md:text-3xl font-bold mb-6 text-black"
         style={{ fontFamily: "'Playfair Display', serif" }}
       >
         Sales / Orders
@@ -29,19 +29,19 @@ export default async function AdminSalesPage() {
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-100">
             <tr>
-              <th className="px-6 py-3 text-left text-gray-700 font-medium text-sm">
+              <th className="px-4 py-2 md:px-6 md:py-3 text-left text-gray-700 font-medium text-sm md:text-base">
                 Customer
               </th>
-              <th className="px-6 py-3 text-left text-gray-700 font-medium text-sm">
+              <th className="px-4 py-2 md:px-6 md:py-3 text-left text-gray-700 font-medium text-sm md:text-base">
                 Perfume
               </th>
-              <th className="px-6 py-3 text-left text-gray-700 font-medium text-sm">
+              <th className="px-4 py-2 md:px-6 md:py-3 text-left text-gray-700 font-medium text-sm md:text-base">
                 Quantity
               </th>
-              <th className="px-6 py-3 text-left text-gray-700 font-medium text-sm">
+              <th className="px-4 py-2 md:px-6 md:py-3 text-left text-gray-700 font-medium text-sm md:text-base">
                 Total Price
               </th>
-              <th className="px-6 py-3 text-left text-gray-700 font-medium text-sm">
+              <th className="px-4 py-2 md:px-6 md:py-3 text-left text-gray-700 font-medium text-sm md:text-base">
                 Date
               </th>
             </tr>
@@ -54,15 +54,19 @@ export default async function AdminSalesPage() {
                   index % 2 === 0 ? "bg-white" : "bg-gray-50 hover:bg-gray-100"
                 }
               >
-                <td className="px-6 py-4 text-gray-800">
+                <td className="px-4 py-2 md:px-6 md:py-4 text-gray-800 whitespace-nowrap">
                   {getUserName(sale.user_id)}
                 </td>
-                <td className="px-6 py-4 text-gray-800">
+                <td className="px-4 py-2 md:px-6 md:py-4 text-gray-800 whitespace-nowrap">
                   {getPerfumeName(sale.perfume_id)}
                 </td>
-                <td className="px-6 py-4 text-gray-800">{sale.quantity}</td>
-                <td className="px-6 py-4 text-gray-800">${sale.total_price}</td>
-                <td className="px-6 py-4 text-gray-800">
+                <td className="px-4 py-2 md:px-6 md:py-4 text-gray-800 whitespace-nowrap">
+                  {sale.quantity}
+                </td>
+                <td className="px-4 py-2 md:px-6 md:py-4 text-gray-800 whitespace-nowrap">
+                  ${sale.total_price}
+                </td>
+                <td className="px-4 py-2 md:px-6 md:py-4 text-gray-800 whitespace-nowrap">
                   {new Date(sale.created_at).toLocaleDateString()}
                 </td>
               </tr>
