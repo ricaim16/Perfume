@@ -1,4 +1,9 @@
 // src/app/admin/perfumes/page.jsx
+
+// THESE TWO LINES ARE THE MAGIC → FORCE FRESH DATA ON VERCEL EVERY TIME
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 import Link from "next/link";
 import DeleteButton from "@/components/DeleteButton";
 import { getAllPerfumes } from "@/lib/actions/perfumes";
@@ -40,7 +45,7 @@ export default async function AdminPerfumeList() {
         </Link>
       </div>
 
-      {/* Table for Desktop */}
+      {/* Desktop Table */}
       <div className="hidden sm:block overflow-x-auto rounded-2xl shadow-lg border border-gray-200 bg-white">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-100">
@@ -125,7 +130,7 @@ export default async function AdminPerfumeList() {
         </table>
       </div>
 
-      {/* Card layout for Mobile */}
+      {/* Mobile Cards */}
       <div className="sm:hidden space-y-4">
         {perfumes.length === 0 ? (
           <p className="text-center text-gray-500 text-sm">
