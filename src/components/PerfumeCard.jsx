@@ -39,7 +39,7 @@ export default function PerfumeCard({ perfume, onAddToCart }) {
             {perfume.size_ml} ml
           </span>
           <span className="text-2xl font-bold text-gray-900">
-            ${Number(perfume.price || 0).toFixed(2)}
+            {Number(perfume.price || 0).toFixed(2)}ETB
           </span>
         </div>
 
